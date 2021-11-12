@@ -1,6 +1,13 @@
-CREATE DATABASE IF NOT EXISTS todolist;
+CREATE DATABASE IF NOT EXISTS todolistB;
 
-USE todolist;
+-- The "WITH mysql_native_password" portion of this query is required for some
+-- older versions of MySQL. If you get a "syntax error [...] near BY" message,
+-- simply remove that part and use only "IDENTIFIED BY".
+CREATE USER IF NOT EXISTS 'todolist'@'localhost' IDENTIFIED WITH mysql_native_password BY 'archidep';
+
+GRANT ALL PRIVILEGES ON todolistB.* TO 'todolist'@'localhost' ;
+
+USE todolistB;
 
 CREATE TABLE IF NOT EXISTS `todo` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
