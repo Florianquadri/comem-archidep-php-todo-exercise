@@ -8,11 +8,11 @@
 define('BASE_URL', '/comem-archidep-php-todo-exercise/');
 
 // Database connection parameters.
-define('DB_USER', 'florian');
-define('DB_PASS', 'florian');
-define('DB_NAME', 'todolist');
+define('DB_USER', 'todolist');
+define('DB_PASS', 'archidep');
+define('DB_NAME', 'todolistB');
 define('DB_HOST', 'localhost');
-define('DB_PORT', '8889');
+define('DB_PORT', '3306');
 
 $db = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASS);
 $items = array();
